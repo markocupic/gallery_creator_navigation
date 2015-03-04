@@ -13,6 +13,6 @@ array_insert(
     $GLOBALS['FE_MOD'],
     2,
     array('module_type_gallery_creator' => array(
-        'gallery_creator_navigation' => 'GalleryCreatorNavigation'
+        'gallery_creator_navigation' => 'MCupic\GalleryCreator\GalleryCreatorNavigation'
     )
 ));
