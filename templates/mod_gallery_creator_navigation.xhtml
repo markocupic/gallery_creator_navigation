@@ -1,3 +1,16 @@
+<?php
+        // Get albumalias from $_GET
+        $albumAlias = \Input::get('items') !== '' ? \Input::get('items') : null;
+        $objAlbum = \GalleryCreatorAlbumsModel::findByAlias($albumAlias);
+        if ($objAlbum === null)
+        {
+        // Hier die Backslashes (// return;) entfernen,
+        // wenn Menu nur angezeigt werden soll,
+        // wenn Benutzer sich in einer Galerie-Detailansicht befindet.
+        // return;
+        }
+?>
+
 <!-- indexer::stop -->
 <nav class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
@@ -10,4 +23,3 @@
 
 
 </nav>
-<!-- indexer::continue -->

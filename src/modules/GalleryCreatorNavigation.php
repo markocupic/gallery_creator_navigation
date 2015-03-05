@@ -40,6 +40,12 @@ class GalleryCreatorNavigation extends \Module
     protected $arrTrail;
 
     /**
+     * rootAlbum (id)
+     * @var integer
+     */
+    protected $rootAlbum;
+
+    /**
      * Do not display the module in certain cases
      * @return string
      */
@@ -180,10 +186,10 @@ class GalleryCreatorNavigation extends \Module
 
                 // Check for subalbums and store the html markup in $row['subitems']
                 $subitems = '';
-                $objSubalbum = \GalleryCreatorAlbumsModel::findByPid($objAlbum->id);
-                if ($objSubalbum !== null)
+                $objSubalbums = \GalleryCreatorAlbumsModel::findByPid($objAlbum->id);
+                if ($objSubalbums !== null)
                 {
-                    if($objSubalbum !== null)
+                    if ($objSubalbums !== null)
                     {
                         $arrClass[] = 'submenu';
                     }
